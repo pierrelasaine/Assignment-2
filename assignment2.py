@@ -16,7 +16,13 @@ class Assignment2:
     def modifyYear(self, n):
         year_str = str(self.year)
         first_part = year_str[:2] * n
-        second_part = ''.join([year_str[i] for i in range(len(year_str)) if i % 2 == 0]) * n
+
+        # Calculate the product of odd positioned digits and n
+        second_part_product = 1
+        for i in range(0, len(year_str), 2):
+            second_part_product *= int(year_str[i])
+        second_part = str(second_part_product * n)
+
         return first_part + second_part
 
     @staticmethod
