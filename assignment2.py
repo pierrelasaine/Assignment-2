@@ -14,11 +14,10 @@ class Assignment2:
         return [anniversary for anniversary in range(10, age + 1, 10)]
 
     def modifyYear(self, n):
-        year_str = str(self.year)
-        first_part = year_str[:2] * n
-
-        odd_chars = ''.join([year_str[i] for i in range(len(year_str)) if i % 2 == 0])
-        second_part = str(int(odd_chars) * n)
+        first_part = str(self.year)[:2] * n
+        
+        multiplied_year = str(self.year * n)
+        second_part = ''.join([multiplied_year[i] for i in range(len(multiplied_year)) if i % 2 == 0])
 
         return first_part + second_part
 
